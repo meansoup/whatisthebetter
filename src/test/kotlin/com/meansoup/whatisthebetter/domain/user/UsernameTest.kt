@@ -9,7 +9,7 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvSource
 import org.junit.jupiter.params.provider.ValueSource
 
-class UsernameTest {
+internal class UsernameTest {
 
     @ParameterizedTest
     @ValueSource(ints = [6, 15, 30])

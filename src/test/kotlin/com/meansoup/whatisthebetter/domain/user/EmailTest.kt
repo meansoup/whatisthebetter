@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvSource
 
-class EmailTest {
+internal class EmailTest {
 
     @Test
     fun `it throws error if email doesn't contain @`() {
