@@ -4,7 +4,7 @@ import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.data.Offset
 import org.junit.jupiter.api.Test
 
-class UserTest {
+internal class UserTest {
 
     @Test
     fun `User를 생성하면 createdAt이 현재 시각으로 설정된다`() {

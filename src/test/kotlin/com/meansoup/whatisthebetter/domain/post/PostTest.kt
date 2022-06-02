@@ -5,7 +5,7 @@ import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.data.Offset
 import org.junit.jupiter.api.Test
 
-class PostTest {
+internal class PostTest {
 
     @Test
     fun `생성 시에 현재시각의 createdAt, modifiedAt이 설정된다`() {
