@@ -13,7 +13,7 @@ import org.mockito.junit.jupiter.MockitoExtension
 internal class PostServiceTest {
 
     @InjectMocks
-    lateinit var postService: PostService
+    lateinit var sut: PostService
 
     @Mock
     lateinit var postRepository: PostRepository
@@ -24,7 +24,7 @@ internal class PostServiceTest {
         val post = PostMother.generate()
 
         // when
-        postService.createPost(post)
+        sut.createPost(post)
 
         // then
         verify(postRepository, times(1)).save(safeEq(post))

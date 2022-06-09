@@ -18,7 +18,7 @@ import org.mockito.junit.jupiter.MockitoExtension
 class LikeServiceTest {
 
     @InjectMocks
-    lateinit var likeService: LikeService
+    lateinit var sut: LikeService
 
     @Mock
     lateinit var likeRepository: LikeRepository
@@ -36,7 +36,7 @@ class LikeServiceTest {
             val content = ContentMother.generate()
 
             // when
-            likeService.like(user, content)
+            sut.like(user, content)
 
             // then
             verify(likeRepository, times(1)).save(capture(likeCaptor))
