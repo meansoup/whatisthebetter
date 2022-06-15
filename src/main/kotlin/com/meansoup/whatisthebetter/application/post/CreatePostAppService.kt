@@ -1,10 +1,21 @@
 package com.meansoup.whatisthebetter.application.post
 
 import com.meansoup.whatisthebetter.application.port.`in`.CreatePostUsecase
+import com.meansoup.whatisthebetter.domain.post.Content
+import com.meansoup.whatisthebetter.domain.post.Post
+import com.meansoup.whatisthebetter.domain.post.PostService
+import com.meansoup.whatisthebetter.domain.post.Title
+import com.meansoup.whatisthebetter.domain.user.UserRepository
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
+import java.util.*
 
 @Service
-class CreatePostAppService : CreatePostUsecase {
+class CreatePostAppService @Autowired constructor(
+    private val userRepository: UserRepository,
+    private val postService: PostService
+): CreatePostUsecase {
+
     override fun execute(
         uid: String,
         postTitle: String,
@@ -13,6 +24,16 @@ class CreatePostAppService : CreatePostUsecase {
         content2Title: String,
         content2Description: String
     ) {
-        TODO("Not yet implemented")
+        val userUuid = UUID.fromString(uid)
+        val user = userRepository.findBy(userUuid)
+
+        val post = Post(
+            user,
+            Title(postTitle),
+            Content(content1Title, content1Description),
+            Content(content2Title, content2Description)
+        )
+
+        postService.createPost(post)
     }
 }
