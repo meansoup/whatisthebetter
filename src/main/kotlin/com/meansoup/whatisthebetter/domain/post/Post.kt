@@ -1,9 +1,10 @@
 package com.meansoup.whatisthebetter.domain.post
 
 import com.meansoup.whatisthebetter.domain.user.User
+import java.util.*
 
 class Post {
-    val id: String
+    val id: UUID
     var owner: User
     var title: Title
     var content1: Content
@@ -11,8 +12,8 @@ class Post {
     var createdAt: Long
     var modifiedAt: Long
 
-    constructor(id: String, owner: User, title: Title, content1: Content, content2: Content) {
-        this.id = id
+    constructor(owner: User, title: Title, content1: Content, content2: Content) {
+        this.id = UUID.randomUUID()
         this.owner = owner
         this.title = title
         this.content1 = content1
