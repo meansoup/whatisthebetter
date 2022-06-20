@@ -1,9 +1,10 @@
 package com.meansoup.whatisthebetter.domain.post
 
+import com.meansoup.whatisthebetter.domain.like.Likeable
 import com.meansoup.whatisthebetter.domain.user.User
 import java.util.*
 
-class Post {
+class Post: Likeable {
     val id: UUID
     var owner: User
     var title: Title
