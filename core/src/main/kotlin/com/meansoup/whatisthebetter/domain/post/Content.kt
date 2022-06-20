@@ -1,4 +1,6 @@
 package com.meansoup.whatisthebetter.domain.post
 
-class Content(val title: String, val description: String) {
+import com.meansoup.whatisthebetter.domain.like.Likeable
+
+class Content(val title: String, val description: String): Likeable {
 }

@@ -2,6 +2,7 @@ package com.meansoup.whatisthebetter.domain.like
 
 import com.meansoup.whatisthebetter.domain.post.ContentMother
 import com.meansoup.whatisthebetter.domain.user.UserMother
+import org.apache.commons.lang3.RandomUtils
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
@@ -10,8 +11,7 @@ import org.mockito.ArgumentCaptor
 import org.mockito.Captor
 import org.mockito.InjectMocks
 import org.mockito.Mock
-import org.mockito.Mockito.times
-import org.mockito.Mockito.verify
+import org.mockito.Mockito.*
 import org.mockito.junit.jupiter.MockitoExtension
 
 @ExtendWith(MockitoExtension::class)
@@ -45,6 +45,25 @@ class LikeServiceTest {
             assertThat(like.user).isEqualTo(user)
             assertThat(like.thing).isEqualTo(content)
         }
+    }
+
+    @Nested
+    inner class likeCntOf {
+
+        @Test
+        fun `likeCntOf returns like counts from likeRepository`() {
+            // given
+            val content = ContentMother.generate()
+            val cnt = RandomUtils.nextLong(1000L, 10000L)
+            doReturn(cnt).`when`(likeRepository).findAllCntOf(content)
+
+            // when
+            val foundCnt = sut.likeCntOf(content)
+
+            // then
+            assertThat(foundCnt).isEqualTo(cnt)
+        }
+
     }
 
     fun <T> capture(argumentCaptor: ArgumentCaptor<T>): T = argumentCaptor.capture()
