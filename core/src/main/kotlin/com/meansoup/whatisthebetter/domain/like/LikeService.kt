@@ -13,4 +13,8 @@ class LikeService @Autowired constructor(
         val like = Like(user, thing)
         likeRepository.save(like)
     }
+
+    fun likeCntOf(likeable: Likeable): Long {
+        return likeRepository.findAllCntOf(likeable)
+    }
 }
