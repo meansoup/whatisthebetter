@@ -1,6 +1,6 @@
 package com.meansoup.whatisthebetter.application.port.`in`
 
-interface CreatePostUsecase {
+interface CreatePostUseCase {
     fun execute(
         uid: String, postTitle: String,
         content1Title: String, content1Description: String,

@@ -1,5 +1,5 @@
 package com.meansoup.whatisthebetter.application.port.`in`
 
-interface LikePostUsecase {
+interface LikePostUseCase {
     fun execute(uid: String, postId: String)
 }

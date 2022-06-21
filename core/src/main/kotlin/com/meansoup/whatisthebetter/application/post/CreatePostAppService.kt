@@ -1,6 +1,6 @@
 package com.meansoup.whatisthebetter.application.post
 
-import com.meansoup.whatisthebetter.application.port.`in`.CreatePostUsecase
+import com.meansoup.whatisthebetter.application.port.`in`.CreatePostUseCase
 import com.meansoup.whatisthebetter.domain.post.Content
 import com.meansoup.whatisthebetter.domain.post.Post
 import com.meansoup.whatisthebetter.domain.post.PostService
@@ -14,7 +14,7 @@ import java.util.*
 class CreatePostAppService @Autowired constructor(
     private val userRepository: UserRepository,
     private val postService: PostService
-): CreatePostUsecase {
+): CreatePostUseCase {
 
     override fun execute(
         uid: String,

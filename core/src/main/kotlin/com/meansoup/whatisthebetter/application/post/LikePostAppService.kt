@@ -1,6 +1,6 @@
 package com.meansoup.whatisthebetter.application.post
 
-import com.meansoup.whatisthebetter.application.port.`in`.LikePostUsecase
+import com.meansoup.whatisthebetter.application.port.`in`.LikePostUseCase
 import com.meansoup.whatisthebetter.domain.like.LikeService
 import com.meansoup.whatisthebetter.domain.post.PostService
 import com.meansoup.whatisthebetter.domain.user.UserRepository
@@ -13,7 +13,7 @@ class LikePostAppService @Autowired constructor(
     private val userRepository: UserRepository,
     private val postService: PostService,
     private val likeService: LikeService
-): LikePostUsecase {
+): LikePostUseCase {
 
     override fun execute(uid: String, postId: String) {
         val user = userRepository.findBy(UUID.fromString(uid))
