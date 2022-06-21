@@ -1,6 +1,6 @@
 package com.meansoup.whatisthebetter.application.post
 
-import com.meansoup.whatisthebetter.application.port.`in`.CreatePostUseCase
+import com.meansoup.whatisthebetter.application.port.`in`.post.CreatePostUseCase
 import com.meansoup.whatisthebetter.domain.post.Content
 import com.meansoup.whatisthebetter.domain.post.Post
 import com.meansoup.whatisthebetter.domain.post.PostService

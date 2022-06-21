@@ -1,4 +1,4 @@
-package com.meansoup.whatisthebetter.application.port.`in`
+package com.meansoup.whatisthebetter.application.port.`in`.post
 
 interface CreatePostUseCase {
     fun execute(
