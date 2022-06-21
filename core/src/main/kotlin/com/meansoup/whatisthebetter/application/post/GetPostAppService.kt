@@ -1,6 +1,6 @@
 package com.meansoup.whatisthebetter.application.post
 
-import com.meansoup.whatisthebetter.application.port.`in`.GetPostUsecase
+import com.meansoup.whatisthebetter.application.port.`in`.GetPostUseCase
 import com.meansoup.whatisthebetter.domain.like.LikeService
 import com.meansoup.whatisthebetter.domain.post.PostService
 import org.springframework.beans.factory.annotation.Autowired
@@ -24,7 +24,7 @@ class GetPostDto(
 class GetPostAppService @Autowired constructor(
     private val postService: PostService,
     private val likeService: LikeService
-): GetPostUsecase {
+): GetPostUseCase {
 
     override fun execute(postId: String): GetPostDto {
 
