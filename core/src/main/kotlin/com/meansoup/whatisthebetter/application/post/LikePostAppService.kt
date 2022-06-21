@@ -1,6 +1,6 @@
 package com.meansoup.whatisthebetter.application.post
 
-import com.meansoup.whatisthebetter.application.port.`in`.LikePostUseCase
+import com.meansoup.whatisthebetter.application.port.`in`.post.LikePostUseCase
 import com.meansoup.whatisthebetter.domain.like.LikeService
 import com.meansoup.whatisthebetter.domain.post.PostService
 import com.meansoup.whatisthebetter.domain.user.UserRepository

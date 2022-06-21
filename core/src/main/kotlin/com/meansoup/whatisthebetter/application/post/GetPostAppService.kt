@@ -1,6 +1,6 @@
 package com.meansoup.whatisthebetter.application.post
 
-import com.meansoup.whatisthebetter.application.port.`in`.GetPostUseCase
+import com.meansoup.whatisthebetter.application.port.`in`.post.GetPostUseCase
 import com.meansoup.whatisthebetter.domain.like.LikeService
 import com.meansoup.whatisthebetter.domain.post.PostService
 import org.springframework.beans.factory.annotation.Autowired

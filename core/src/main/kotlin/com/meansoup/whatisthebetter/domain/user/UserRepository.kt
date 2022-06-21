@@ -4,4 +4,5 @@ import java.util.*
 
 interface UserRepository {
     fun findBy(uid: UUID): User
+    fun save(user: User)
 }
