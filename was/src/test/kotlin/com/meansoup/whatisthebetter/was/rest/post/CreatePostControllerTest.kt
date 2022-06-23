@@ -27,12 +27,8 @@ internal class CreatePostControllerTest(
 
         // when & then
         webClient.post()
-            .uri {
-                    builder -> builder
-                .path("v1/post")
-                .queryParam("uid", uid)
-                .build()
-            }
+            .uri("v1/post")
+            .header("uid", uid)
             .contentType(MediaType.APPLICATION_JSON)
             .body(BodyInserters.fromValue(jsonRequest))
             .exchange()

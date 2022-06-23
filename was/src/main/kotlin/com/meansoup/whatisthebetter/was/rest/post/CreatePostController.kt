@@ -12,7 +12,7 @@ class CreatePostController @Autowired constructor(
 
     @PostMapping("/v1/post")
     @ResponseStatus(code = HttpStatus.CREATED)
-    fun createPost(@RequestParam uid: String, @RequestBody body: CreatePostRequest) {
+    fun createPost(@RequestHeader uid: String, @RequestBody body: CreatePostRequest) {
         createPostUseCase.execute(
             uid,
             body.title,
