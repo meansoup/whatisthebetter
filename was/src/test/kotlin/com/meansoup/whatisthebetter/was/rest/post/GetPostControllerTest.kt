@@ -1,38 +1,38 @@
 package com.meansoup.whatisthebetter.was.rest.post
 
-import com.meansoup.whatisthebetter.was.utils.JsonUtils
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.http.MediaType
 import org.springframework.test.context.junit.jupiter.SpringExtension
 import org.springframework.test.web.reactive.server.WebTestClient
-import org.springframework.web.reactive.function.BodyInserters
 import java.util.*
 
 @ExtendWith(SpringExtension::class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-internal class CreatePostControllerTest(
+internal class GetPostControllerTest(
     @Autowired private val webClient: WebTestClient
 ) {
 
     @Test
-    fun `normalCase`() {
+    fun normalCase() {
         // given
-        val uid = UUID.randomUUID().toString()
-
-        val request = CreatePostRequestMother.generate()
-        val jsonRequest = JsonUtils.toJson(request)
+        val postId = UUID.randomUUID().toString()
 
         // when & then
-        webClient.post()
-            .uri("v1/post")
-            .header("uid", uid)
-            .contentType(MediaType.APPLICATION_JSON)
-            .body(BodyInserters.fromValue(jsonRequest))
+        val getPostResponse = webClient.get()
+            .uri { builder ->
+                builder
+                    .path("v1/post")
+                    .queryParam("postId", postId)
+                    .build()
+            }
             .exchange()
-            .expectStatus().isCreated
-    }
+            .expectStatus().isOk
+            .expectBody(GetPostResponse::class.java)
+            .returnResult().responseBody
 
+        assertThat(getPostResponse?.title).isNotEmpty()
+    }
 }
