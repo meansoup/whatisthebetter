@@ -1,4 +1,4 @@
-package com.meansoup.whatisthebetter
+package com.meansoup.whatisthebetter.was
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
