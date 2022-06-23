@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 
 @RestController
-class PostController @Autowired constructor(
+class CreatePostController @Autowired constructor(
     private val createPostUseCase: CreatePostUseCase
 ) {
 
@@ -23,3 +23,6 @@ class PostController @Autowired constructor(
         )
     }
 }
+
+data class CreatePostRequest(val title: String, val content1: ContentRequest, val content2: ContentRequest)
+data class ContentRequest(val title: String, val description: String)
