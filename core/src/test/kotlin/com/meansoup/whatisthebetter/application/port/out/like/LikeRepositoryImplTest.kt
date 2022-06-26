@@ -2,7 +2,7 @@ package com.meansoup.whatisthebetter.application.port.out.like
 
 import com.meansoup.whatisthebetter.application.exception.InvalidTypeException
 import com.meansoup.whatisthebetter.application.port.out.like.mysql.MysqlLike
-import com.meansoup.whatisthebetter.application.port.out.like.mysql.MysqlLikeDtoJpaRepository
+import com.meansoup.whatisthebetter.application.port.out.like.mysql.MysqlLikeJpaRepository
 import com.meansoup.whatisthebetter.domain.like.LikeMother
 import com.meansoup.whatisthebetter.domain.like.Likeable
 import com.meansoup.whatisthebetter.domain.post.Post
@@ -21,7 +21,7 @@ import org.mockito.junit.jupiter.MockitoExtension
 internal class LikeRepositoryImplTest {
 
     @Mock
-    lateinit var mysqlLikeDtoJpaRepository: MysqlLikeDtoJpaRepository
+    lateinit var mysqlLikeJpaRepository: MysqlLikeJpaRepository
 
     @InjectMocks
     lateinit var sut: LikeRepositoryImpl
@@ -38,7 +38,7 @@ internal class LikeRepositoryImplTest {
         sut.save(like)
 
         // then
-        verify(mysqlLikeDtoJpaRepository, times(1)).save(mysqlLikeCaptor.capture())
+        verify(mysqlLikeJpaRepository, times(1)).save(mysqlLikeCaptor.capture())
         val mysqlLike = mysqlLikeCaptor.value
 
         assertThat(mysqlLike.userId).isEqualTo(like.user.id.toString())
@@ -58,7 +58,7 @@ internal class LikeRepositoryImplTest {
             sut.findAllCntOf(post)
 
             // then
-            verify(mysqlLikeDtoJpaRepository, times(1)).countByLikedId(safeEq(postId))
+            verify(mysqlLikeJpaRepository, times(1)).countByLikedId(safeEq(postId))
         }
 
         @Test

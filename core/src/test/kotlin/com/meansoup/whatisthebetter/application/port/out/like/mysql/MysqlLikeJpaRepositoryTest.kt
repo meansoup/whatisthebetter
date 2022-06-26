@@ -21,7 +21,7 @@ private class MysqlLikeJpaRepositoryTest {
 
 
     @Autowired
-    lateinit var sut: MysqlLikeDtoJpaRepository
+    lateinit var sut: MysqlLikeJpaRepository
 
     @Test
     fun `save & find`() {
