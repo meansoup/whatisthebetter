@@ -22,5 +22,10 @@ class MysqlLikeMother {
             return MysqlLike(likePost.user.id.toString(), likedId, likePost.createdAt)
         }
 
+        fun generatePost(likedId: String): MysqlLike {
+            val likePost = LikeMother.generatePost()
+            return MysqlLike(likePost.user.id.toString(), likedId, likePost.createdAt)
+        }
+
     }
 }
