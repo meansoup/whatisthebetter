@@ -7,6 +7,7 @@ import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Import
 import org.springframework.test.context.junit.jupiter.SpringExtension
 import java.util.*
@@ -16,6 +17,7 @@ import java.util.*
 @SpringBootTest
 private class MysqlLikeJpaRepositoryTest {
 
+    @ComponentScan(basePackages = ["com.meansoup.whatisthebetter"])
     @SpringBootApplication(scanBasePackages = ["com.meansoup.whatisthebetter"])
     class TestConfig
 
