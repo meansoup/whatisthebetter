@@ -7,3 +7,6 @@ class TooSmallUsernameException(message: String): DomainException(message)
 class InvalidCharacterInUsernameException(message: String): DomainException(message)
 
 class InvalidEmailException(message: String): DomainException(message)
+
+class ResourceNotExistException(message: String): DomainException(message)
+class NullPropertyException(message: String): DomainException(message)

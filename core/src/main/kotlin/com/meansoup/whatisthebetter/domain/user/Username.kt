@@ -4,7 +4,7 @@ import com.meansoup.whatisthebetter.domain.exception.InvalidCharacterInUsernameE
 import com.meansoup.whatisthebetter.domain.exception.TooLongUsernameException
 import com.meansoup.whatisthebetter.domain.exception.TooSmallUsernameException
 
-class Username(val name: String) {
+data class Username(val name: String) {
 
     init {
         if (name.length < 6) {
