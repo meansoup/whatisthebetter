@@ -3,7 +3,7 @@ package com.meansoup.whatisthebetter.domain.user
 import com.meansoup.whatisthebetter.domain.exception.InvalidEmailException
 import java.util.regex.Pattern
 
-class Email(val name: String) {
+data class Email(val name: String) {
 
     companion object {
         val REGEX_PATTERN = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@" +
