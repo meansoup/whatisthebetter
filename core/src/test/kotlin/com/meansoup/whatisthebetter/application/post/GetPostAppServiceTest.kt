@@ -41,7 +41,7 @@ internal class GetPostAppServiceTest {
 
         // then
         assertThat(getPostDto.id).isEqualTo(postId.toString())
-        assertThat(getPostDto.ownerUsername).isEqualTo(post.owner.name.name)
+        assertThat(getPostDto.ownerUsername).isEqualTo(post.userId.toString())
         assertThat(getPostDto.title).isEqualTo(post.title.name)
         assertThat(getPostDto.content1Title).isEqualTo(post.content1.title)
         assertThat(getPostDto.content1Description).isEqualTo(post.content1.description)

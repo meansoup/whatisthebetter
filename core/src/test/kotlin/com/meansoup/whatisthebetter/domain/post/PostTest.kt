@@ -16,11 +16,11 @@ internal class PostTest {
         val target2 = ContentMother.generate()
 
         // when
-        val post = Post(owner, title, target1, target2)
+        val post = Post(owner.id, title, target1, target2)
 
         // then
         assertThat(post.id).isNotNull()
-        assertThat(post.owner).isEqualTo(owner)
+        assertThat(post.userId).isEqualTo(owner)
         assertThat(post.title).isEqualTo(title)
         assertThat(post.content1).isEqualTo(target1)
         assertThat(post.content2).isEqualTo(target2)

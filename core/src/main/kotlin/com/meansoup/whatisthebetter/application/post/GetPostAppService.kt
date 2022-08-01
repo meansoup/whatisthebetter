@@ -35,7 +35,7 @@ class GetPostAppService @Autowired constructor(
 
         return GetPostDto(
             post.id.toString(),
-            post.owner.name.name,
+            post.userId.toString(),
             post.title.name,
             post.content1.title,
             post.content1.description,
