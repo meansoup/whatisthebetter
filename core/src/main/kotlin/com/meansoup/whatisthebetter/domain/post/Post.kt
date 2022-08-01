@@ -6,16 +6,16 @@ import java.util.*
 
 class Post: Likeable {
     val id: UUID
-    var owner: User
+    var userId: UUID
     var title: Title
     var content1: Content
     var content2: Content
     var createdAt: Long
     var modifiedAt: Long
 
-    constructor(owner: User, title: Title, content1: Content, content2: Content) {
+    constructor(userId: UUID, title: Title, content1: Content, content2: Content) {
         this.id = UUID.randomUUID()
-        this.owner = owner
+        this.userId = userId
         this.title = title
         this.content1 = content1
         this.content2 = content2

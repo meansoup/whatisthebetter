@@ -28,7 +28,7 @@ class CreatePostAppService @Autowired constructor(
         val user = userRepository.findBy(userUuid)
 
         val post = Post(
-            user,
+            user.id,
             Title(postTitle),
             Content(content1Title, content1Description),
             Content(content2Title, content2Description)
