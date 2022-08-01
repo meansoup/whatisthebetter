@@ -1,8 +1,8 @@
 package com.meansoup.whatisthebetter.application.port.out.like
 
+import com.meansoup.whatisthebetter.adapter.out.mysql.like.MysqlLikeFactory
+import com.meansoup.whatisthebetter.adapter.out.mysql.like.MysqlLikeJpaRepository
 import com.meansoup.whatisthebetter.application.exception.InvalidTypeException
-import com.meansoup.whatisthebetter.application.port.out.like.mysql.MysqlLikeFactory
-import com.meansoup.whatisthebetter.application.port.out.like.mysql.MysqlLikeJpaRepository
 import com.meansoup.whatisthebetter.domain.like.Like
 import com.meansoup.whatisthebetter.domain.like.LikeRepository
 import com.meansoup.whatisthebetter.domain.like.Likeable

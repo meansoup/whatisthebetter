@@ -1,8 +1,8 @@
 package com.meansoup.whatisthebetter.application.port.out.user
 
-import com.meansoup.whatisthebetter.application.port.out.user.mysql.MysqlUser
-import com.meansoup.whatisthebetter.application.port.out.user.mysql.MysqlUserFactory
-import com.meansoup.whatisthebetter.application.port.out.user.mysql.MysqlUserJpaRepository
+import com.meansoup.whatisthebetter.adapter.out.mysql.user.MysqlUser
+import com.meansoup.whatisthebetter.adapter.out.mysql.user.MysqlUserFactory
+import com.meansoup.whatisthebetter.adapter.out.mysql.user.MysqlUserJpaRepository
 import com.meansoup.whatisthebetter.domain.exception.ResourceNotExistException
 import com.meansoup.whatisthebetter.domain.user.UserMother
 import org.assertj.core.api.Assertions.assertThat

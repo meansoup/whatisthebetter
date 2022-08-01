@@ -1,5 +1,8 @@
 package com.meansoup.whatisthebetter.application.port.out.like.mysql
 
+import com.meansoup.whatisthebetter.adapter.out.mysql.like.MysqlLike
+import com.meansoup.whatisthebetter.adapter.out.mysql.like.MysqlLikeId
+import com.meansoup.whatisthebetter.adapter.out.mysql.like.MysqlLikeJpaRepository
 import org.apache.commons.lang3.RandomUtils
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test

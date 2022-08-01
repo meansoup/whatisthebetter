@@ -1,4 +1,4 @@
-package com.meansoup.whatisthebetter.application.port.out.like.mysql
+package com.meansoup.whatisthebetter.adapter.out.mysql.like
 
 import java.io.Serializable
 import javax.persistence.*
