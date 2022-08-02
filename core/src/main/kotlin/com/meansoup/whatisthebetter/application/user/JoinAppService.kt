@@ -13,8 +13,10 @@ class JoinAppService @Autowired constructor(
     private val userService: UserService
 ): JoinUseCase {
 
-    override fun execute(name: String, email: String) {
+    override fun execute(name: String, email: String): User {
         val user = User(Username(name), Email(email))
         userService.createUser(user)
+
+        return user
     }
 }
