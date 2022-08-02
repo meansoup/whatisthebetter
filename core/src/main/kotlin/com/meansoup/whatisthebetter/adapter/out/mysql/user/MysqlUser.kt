@@ -1,4 +1,4 @@
-package com.meansoup.whatisthebetter.application.port.out.user.mysql
+package com.meansoup.whatisthebetter.adapter.out.mysql.user
 
 import javax.persistence.Column
 import javax.persistence.Entity

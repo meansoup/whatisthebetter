@@ -1,5 +1,6 @@
 package com.meansoup.whatisthebetter.application.port.out.user.mysql
 
+import com.meansoup.whatisthebetter.adapter.out.mysql.user.MysqlUserJpaRepository
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith

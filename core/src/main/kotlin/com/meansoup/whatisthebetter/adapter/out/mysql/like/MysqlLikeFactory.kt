@@ -1,4 +1,4 @@
-package com.meansoup.whatisthebetter.application.port.out.like.mysql
+package com.meansoup.whatisthebetter.adapter.out.mysql.like
 
 import com.meansoup.whatisthebetter.domain.like.Like
 import com.meansoup.whatisthebetter.domain.post.Post

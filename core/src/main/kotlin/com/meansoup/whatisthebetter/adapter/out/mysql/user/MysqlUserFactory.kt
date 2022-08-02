@@ -1,4 +1,4 @@
-package com.meansoup.whatisthebetter.application.port.out.user.mysql
+package com.meansoup.whatisthebetter.adapter.out.mysql.user
 
 import com.meansoup.whatisthebetter.domain.exception.NullPropertyException
 import com.meansoup.whatisthebetter.domain.user.Email

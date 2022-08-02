@@ -1,8 +1,8 @@
 package com.meansoup.whatisthebetter.application.port.out.post
 
-import com.meansoup.whatisthebetter.application.port.out.post.mysql.MysqlPost
-import com.meansoup.whatisthebetter.application.port.out.post.mysql.MysqlPostFactory
-import com.meansoup.whatisthebetter.application.port.out.post.mysql.MysqlPostJpaRepository
+import com.meansoup.whatisthebetter.adapter.out.mysql.post.MysqlPost
+import com.meansoup.whatisthebetter.adapter.out.mysql.post.MysqlPostFactory
+import com.meansoup.whatisthebetter.adapter.out.mysql.post.MysqlPostJpaRepository
 import com.meansoup.whatisthebetter.domain.exception.ResourceNotExistException
 import com.meansoup.whatisthebetter.domain.post.PostMother
 import org.assertj.core.api.Assertions.assertThat

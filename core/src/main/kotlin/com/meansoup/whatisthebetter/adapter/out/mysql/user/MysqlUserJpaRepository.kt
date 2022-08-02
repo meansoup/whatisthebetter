@@ -1,4 +1,4 @@
-package com.meansoup.whatisthebetter.application.port.out.user.mysql
+package com.meansoup.whatisthebetter.adapter.out.mysql.user
 
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository

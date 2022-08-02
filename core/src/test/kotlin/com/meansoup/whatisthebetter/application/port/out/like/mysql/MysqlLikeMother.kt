@@ -1,5 +1,7 @@
 package com.meansoup.whatisthebetter.application.port.out.like.mysql
 
+import com.meansoup.whatisthebetter.adapter.out.mysql.like.MysqlLike
+import com.meansoup.whatisthebetter.adapter.out.mysql.like.MysqlLikeFactory
 import com.meansoup.whatisthebetter.domain.like.LikeMother
 
 class MysqlLikeMother {

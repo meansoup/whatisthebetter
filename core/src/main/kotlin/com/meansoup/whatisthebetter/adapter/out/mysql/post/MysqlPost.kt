@@ -1,25 +1,37 @@
-package com.meansoup.whatisthebetter.application.port.out.post.mysql
+package com.meansoup.whatisthebetter.adapter.out.mysql.post
 
+import javax.persistence.Column
 import javax.persistence.Entity
+import javax.persistence.Id
 import javax.persistence.Table
 
 @Entity
 @Table(name = "post")
 class MysqlPost {
 
+    @Id
     var id: String? = null
 
+    @Column
     var userId: String? = null
 
+    @Column
     var title: String? = null
 
+    @Column
     var content1Title: String? = null
+    @Column
     var content1Description: String? = null
 
+    @Column
     var content2Title: String? = null
+    @Column
     var content2Description: String? = null
 
+    @Column
     var createdAt: Long? = null
+
+    @Column
     var modifiedAt: Long? = null
 
     constructor(

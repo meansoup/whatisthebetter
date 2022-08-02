@@ -1,4 +1,4 @@
-package com.meansoup.whatisthebetter.application.port.out.post.mysql
+package com.meansoup.whatisthebetter.adapter.out.mysql.post
 
 import com.meansoup.whatisthebetter.domain.exception.NullPropertyException
 import com.meansoup.whatisthebetter.domain.post.Content

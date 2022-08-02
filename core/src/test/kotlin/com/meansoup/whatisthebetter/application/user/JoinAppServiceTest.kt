@@ -34,14 +34,19 @@ internal class JoinAppServiceTest {
         val email = EmailMother.generate().name
 
         // when
-        sut.execute(name, email)
+        val gotUser = sut.execute(name, email)
 
         // then
         verify(userService, times(1)).createUser(capture(userCaptor))
 
-        val user = userCaptor.value
-        assertThat(user.name.name).isEqualTo(name)
-        assertThat(user.email.name).isEqualTo(email)
+        val userToCreate = userCaptor.value
+        assertThat(userToCreate.name.name).isEqualTo(name)
+        assertThat(userToCreate.email.name).isEqualTo(email)
+
+        assertThat(gotUser.id).isEqualTo(userToCreate.id)
+        assertThat(gotUser.name).isEqualTo(userToCreate.name)
+        assertThat(gotUser.email).isEqualTo(userToCreate.email)
+        assertThat(gotUser.createdAt).isEqualTo(userToCreate.createdAt)
     }
 
     fun <T> capture(argumentCaptor: ArgumentCaptor<T>): T = argumentCaptor.capture()
