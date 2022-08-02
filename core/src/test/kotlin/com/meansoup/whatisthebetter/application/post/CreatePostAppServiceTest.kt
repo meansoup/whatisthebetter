@@ -45,13 +45,21 @@ internal class CreatePostAppServiceTest {
         val content2Description = RandomStringUtils.randomAlphanumeric(10)
 
         // when
-        sut.execute(user.id.toString(), postTitle, content1Title, content1Description, content2Title, content2Description)
+        val gotPost = sut.execute(user.id.toString(), postTitle, content1Title, content1Description, content2Title, content2Description)
 
         // then
         verify(postService, times(1)).createPost(capture(postCaptor))
 
         val post = postCaptor.value
         assertThat(post.title.name).isEqualTo(postTitle)
+
+        assertThat(gotPost.id).isEqualTo(post.id)
+        assertThat(gotPost.userId).isEqualTo(post.userId)
+        assertThat(gotPost.title).isEqualTo(post.title)
+        assertThat(gotPost.content1).isEqualTo(post.content1)
+        assertThat(gotPost.content2).isEqualTo(post.content2)
+        assertThat(gotPost.createdAt).isEqualTo(post.createdAt)
+        assertThat(gotPost.modifiedAt).isEqualTo(post.modifiedAt)
     }
 
     fun <T> safeAny(type: Class<T>): T = any<T>(type)

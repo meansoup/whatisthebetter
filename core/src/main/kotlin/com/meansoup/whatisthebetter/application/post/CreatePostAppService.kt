@@ -23,7 +23,7 @@ class CreatePostAppService @Autowired constructor(
         content1Description: String,
         content2Title: String,
         content2Description: String
-    ) {
+    ): Post {
         val userUuid = UUID.fromString(uid)
         val user = userRepository.findBy(userUuid)
 
@@ -35,5 +35,6 @@ class CreatePostAppService @Autowired constructor(
         )
 
         postService.createPost(post)
+        return post
     }
 }
