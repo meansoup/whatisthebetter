@@ -16,9 +16,12 @@ class JoinUserController @Autowired constructor(
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/v1/user", produces = [MediaType.APPLICATION_JSON_VALUE])
-    fun getPost(@RequestBody joinRequest: JoinRequest) {
-        joinUseCase.execute(joinRequest.uid, joinRequest.email)
+    fun getPost(@RequestBody joinRequest: JoinRequest): JoinResponse {
+        val user = joinUseCase.execute(joinRequest.name, joinRequest.email)
+
+        return JoinResponse(user.id.toString(), user.name.name, user.email.name)
     }
 }
 
-data class JoinRequest(val uid: String, val email: String)
+data class JoinRequest(val name: String, val email: String)
+data class JoinResponse(val userId: String, val name: String, val email: String)
