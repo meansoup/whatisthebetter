@@ -1,4 +1,3 @@
 package com.meansoup.whatisthebetter.domain.post
 
-class Title(val name: String) {
-}
+data class Title(val name: String)
