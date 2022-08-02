@@ -12,20 +12,20 @@ class MysqlPost {
     @Id
     var id: String? = null
 
-    @Column
+    @Column(name = "user_id")
     var userId: String? = null
 
     @Column
     var title: String? = null
 
-    @Column
+    @Column(name = "content1_title")
     var content1Title: String? = null
-    @Column
+    @Column(name = "content1_description")
     var content1Description: String? = null
 
-    @Column
+    @Column(name = "content2_title")
     var content2Title: String? = null
-    @Column
+    @Column(name = "content2_description")
     var content2Description: String? = null
 
     @Column
@@ -33,6 +33,8 @@ class MysqlPost {
 
     @Column
     var modifiedAt: Long? = null
+
+    constructor() {}
 
     constructor(
         id: String?, owner: String?, title: String?, content1Title: String?, content1Description: String?,
